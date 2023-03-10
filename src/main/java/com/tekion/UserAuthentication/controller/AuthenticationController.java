@@ -1,8 +1,9 @@
-package com.tekion.UserAuthentication.auth;
+package com.tekion.UserAuthentication.controller;
 
+import com.tekion.UserAuthentication.auth.AuthenticationService;
 import com.tekion.UserAuthentication.dto.AuthenticationRequestDto;
-import com.tekion.UserAuthentication.dto.AuthenticationResponseDto;
-import com.tekion.UserAuthentication.dto.RegisterRequestDto;
+import com.tekion.UserAuthentication.response.AuthenticationResponseDto;
+import com.tekion.UserAuthentication.response.RegisterRequestDto;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

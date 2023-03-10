@@ -1,6 +1,6 @@
-package com.tekion.UserAuthentication.repository;
+package com.tekion.UserAuthentication.datasource.repository;
 
-import com.tekion.UserAuthentication.model.User;
+import com.tekion.UserAuthentication.datasource.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

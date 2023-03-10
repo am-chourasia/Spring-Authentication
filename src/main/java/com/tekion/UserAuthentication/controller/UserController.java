@@ -1,7 +1,7 @@
 package com.tekion.UserAuthentication.controller;
 
-import com.tekion.UserAuthentication.model.User;
-import com.tekion.UserAuthentication.repository.UserRepository;
+import com.tekion.UserAuthentication.datasource.model.User;
+import com.tekion.UserAuthentication.datasource.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.tekion.UserAuthentication.dto;
+package com.tekion.UserAuthentication.response;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

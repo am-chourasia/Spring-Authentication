@@ -2,11 +2,11 @@ package com.tekion.UserAuthentication.auth;
 
 import com.tekion.UserAuthentication.auth.jwt.JwtService;
 import com.tekion.UserAuthentication.dto.AuthenticationRequestDto;
-import com.tekion.UserAuthentication.dto.AuthenticationResponseDto;
-import com.tekion.UserAuthentication.dto.RegisterRequestDto;
-import com.tekion.UserAuthentication.model.Role;
-import com.tekion.UserAuthentication.model.User;
-import com.tekion.UserAuthentication.repository.UserRepository;
+import com.tekion.UserAuthentication.response.AuthenticationResponseDto;
+import com.tekion.UserAuthentication.response.RegisterRequestDto;
+import com.tekion.UserAuthentication.datasource.model.Role;
+import com.tekion.UserAuthentication.datasource.model.User;
+import com.tekion.UserAuthentication.datasource.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -39,7 +39,6 @@ public class AuthenticationService {
                         request.email(),
                         request.password()
                 ));
-
         User user = userRepository.findByEmail(request.email()).orElseThrow();
         String jwt = jwtService.generateToken(user);
         return AuthenticationResponseDto.builder().token(jwt).build();

@@ -1,6 +1,6 @@
 package com.tekion.UserAuthentication.config;
 
-import com.tekion.UserAuthentication.repository.UserRepository;
+import com.tekion.UserAuthentication.datasource.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,14 +29,13 @@ public class ApplicationConfiguration {
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
         authProvider.setUserDetailsService(userDetailsService());
-        authProvider.setPasswordEncoder(passEncoder());
+        authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
     }
 
     @Bean
     public UserDetailsService userDetailsService() {
         return new UserDetailsService() {
-
             @Override
             public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
                 return userRepository.findByEmail(username).orElseThrow(
@@ -46,7 +45,7 @@ public class ApplicationConfiguration {
     }
 
     @Bean
-    public PasswordEncoder passEncoder() {
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }

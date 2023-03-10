@@ -1,4 +1,4 @@
-package com.tekion.UserAuthentication.dto;
+package com.tekion.UserAuthentication.response;
 
 import lombok.*;
 

@@ -1,4 +1,4 @@
-package com.tekion.UserAuthentication.model;
+package com.tekion.UserAuthentication.datasource.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
